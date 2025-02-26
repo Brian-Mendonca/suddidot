@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-w81*e%s-c$frzr4l%6p4qhc&ry9aj*ud1xc5pv!9h(a77t^nzq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['']
-# '127.0.0.1','localhost','suddidot.com', 'www.suddidot.com'
+ALLOWED_HOSTS = ['brianmendonca.pythonanywhere.com','suddidot.com', 'www.suddidot.com']
 
 # Application definition
 
@@ -52,9 +51,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ROOT_URLCONF = 'suddidot.urls'
 
@@ -122,8 +121,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/brianmendonca/suddidot/static'
 STATICFILES_DIRS = [BASE_DIR / "suddidotapp/static/"]
 
 # Default primary key field type
@@ -134,9 +133,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / "media"
- 
-# TinyMCE Configuration 
+MEDIA_ROOT = '/home/brianmendonca/suddidot/media'
+
+# TinyMCE Configuration
 TINYMCE_DEFAULT_CONFIG = {
     'height': 500,
     'width': 700,
