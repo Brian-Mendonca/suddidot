@@ -41,8 +41,8 @@ def home(request):
     random_categories = random.sample(categories, min(4, len(categories)))
 
     # Footer Categories 
-    all_categories_footer = list(Category.objects.all())
-    footer_categories = random.sample(all_categories_footer, min(8, len(all_categories_footer)))
+    # all_categories_footer = list(Category.objects.all())
+    # footer_categories = random.sample(all_categories_footer, min(8, len(all_categories_footer)))
 
     category_posts = {}
     for cat in random_categories:
@@ -59,7 +59,7 @@ def home(request):
         'categories': random_categories,
         'category_posts': category_posts,
         'new_news': latest_news[:6], 
-        'footer_categories': footer_categories,
+        # 'footer_categories': footer_categories,
     }
     return render(request, 'index.html', context)
 
@@ -84,8 +84,8 @@ def category(request,slug):
     popular_news = NewsArticle.objects.order_by('-views')[:3]
     
     # Footer Categories
-    categories = list(Category.objects.all())
-    random_categories = random.sample(categories, min(8, len(categories)))
+    # categories = list(Category.objects.all())
+    # random_categories = random.sample(categories, min(8, len(categories)))
 
     # Latest News 
     latest_news = list(NewsArticle.objects.order_by('-published_at'))
@@ -97,7 +97,7 @@ def category(request,slug):
         'articles':articles,
         'page_obj': page_obj,
         'popular_news': popular_news,
-        'categories': random_categories,
+        # 'categories': random_categories,
         'new_news': latest_news[:6], 
 
     }
@@ -125,8 +125,8 @@ def news_detail(request, slug):
     popular_news = NewsArticle.objects.order_by('-views')[:3]
     
     # Footer Categories
-    categories = list(Category.objects.all())
-    random_categories = random.sample(categories, min(8, len(categories)))
+    # categories = list(Category.objects.all())
+    # random_categories = random.sample(categories, min(8, len(categories)))
 
     # Latest news 
     latest_news = list(NewsArticle.objects.order_by('-published_at'))
@@ -155,7 +155,7 @@ def news_detail(request, slug):
         'news': news,
         'readnext_news': readnext_news[:5],
         'popular_news': popular_news,
-        'categories': random_categories,
+        # 'categories': random_categories,
         'new_news': latest_news[:6], 
         'comments': comments,
         'remembered_name': request.COOKIES.get('comment_name', ''),
@@ -186,15 +186,15 @@ def search(request):
     popular_news = NewsArticle.objects.order_by('-views')[:3]
     
     # Footer Categories
-    categories = list(Category.objects.all())
-    random_categories = random.sample(categories, min(8, len(categories)))
+    # categories = list(Category.objects.all())
+    # random_categories = random.sample(categories, min(8, len(categories)))
     
     context = {
         'query': query,
         'results': results,
         'page_obj': page_obj,
         'popular_news': popular_news,
-        'categories': random_categories,
+        # 'categories': random_categories,
     }
     return render(request, 'search_results.html', context)
 
