@@ -402,41 +402,6 @@ a.left-topbar-item:hover {
   -webkit-transition: all 0.3s;
 }
 
-/* .main-menu > li > a::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: calc(100% + 36px);
-  height: 5px;
-  bottom: 0;
-  left: -18px;
-  background-color: #e6e6e6;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-
-  -webkit-transform: scaleX(0);
-  -moz-transform: scaleX(0);
-  -ms-transform: scaleX(0);
-  -o-transform: scaleX(0);
-  transform: scaleX(0);
-} */
-
-/* .main-menu > li > a::after {
-  content: "\f2f9";
-  font-family: Material-Design-Iconic-Font;
-  font-size: 16px;
-  color: #222;
-  line-height: 1.5;
-  margin-left: 6px;
-  margin-bottom: 1px;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-} */
-
 li.main-menu-active > a::before {
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
@@ -702,7 +667,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .logo-mobile img {
-  /* max-width: calc(100% - 35px); */
+  max-width: calc(100% - 35px);
   max-height: 150%;
   position:absolute;
   top: 0; 
@@ -1825,22 +1790,22 @@ a.breadcrumb-item:hover {
 
 
 @media (max-width: 991px) {
-  img.max-s-full{max-width: 40%;}
+  img.max-s-full1{max-width: 20%;}
 }
 
 
 @media (max-width: 767px) {
-  .respon2 {font-size: 22px}
+  img.max-s-full1{max-width: 18%;}
 }
 
 
 @media (max-width: 575px) {
-  
+  img.max-s-full1{max-width: 28%;}
 }
 
 
 @media (max-width: 480px) {
-  
+  img.max-s-full1{max-width: 28%;}
 }
 
 /*==================================================================
