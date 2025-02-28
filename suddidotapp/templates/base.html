@@ -7,8 +7,23 @@
 	<title>Latest South Canara News - SuddiDot</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% if news %}
+	 <!-- Open Graph Meta Tags -->
+	 <meta property="og:title" content="{{ news.title }}" />
+	 <meta property="og:description" content="{{ news.content|truncatewords:10 }}" />
+	 <meta property="og:image" content="{{ image_url }}" />
+	 <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+	 <meta property="og:type" content="article" />
+	 <meta property="og:site_name" content="Suddidot News" />
+
+	 <!-- Twitter Card (for better previews on Twitter/X) -->
+	 <meta name="twitter:card" content="summary_large_image" />
+	 <meta name="twitter:title" content="{{ news.title }}" />
+	 <meta name="twitter:description" content="{{ news.short_description }}" />
+	 <meta name="twitter:image" content="{{ image_url }}" />
+	 {% endif %}
 	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}" />
 	<style>
 		@import url(http://fonts.googleapis.com/earlyaccess/notosanskannada.css	);
 
@@ -70,11 +85,11 @@
 					<li>
 						<a href="{% url 'home' %}">Home </a>
 					</li>
-					
+
 					<li>
 						<a href="{% url 'category' 'mangaluru' %}">ಮಂಗಳೂರು</a>
 					</li>
-					
+
 					<li>
 						<a href="">ಕರಾವಳಿ</a>
 						<ul class="sub-menu-m">
@@ -87,7 +102,7 @@
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
 						</span>
 					</li>
-					
+
 
 					<li>
 						<a href="{% url 'category' 'kasaragodu' %}">ಅಪರಾಧ</a>
@@ -96,7 +111,7 @@
 					<li>
 						<a href="{% url 'category' 'ground-report' %}">ಗ್ರೌಂಡ್ ರಿಪೋರ್ಟ್	</a>
 					</li>
-					
+
 					<li>
 						<a href="{% url 'category' 'national-international' %}">ದೇಶ-ವಿದೇಶ</a>
 					</li>
@@ -150,7 +165,7 @@
 										<a class="nav-link" data-toggle="" href="{% url 'category' 'kasaragodu' %}" role="">ಕಾಸರಗೋಡು</a>
 									</div>
 
-								</div> 
+								</div>
 							</li>
 
 							<li class="mega-menu-item">
@@ -172,8 +187,8 @@
 								<a href="{% url 'category' 'entertainment' %}">ಮನೋರಂಜನೆ</a>
 
 							</li>
-							
-							<li class="mega-menu-item"> 
+
+							<li class="mega-menu-item">
 								<a href="{% url 'category' 'state' %}">ರಾಜ್ಯ</a>
 							</li>
 						</ul>
@@ -183,7 +198,7 @@
 		</div>
 	</header>
 
-	
+
 
 {% block content %}
 
@@ -202,7 +217,7 @@
 						</div>
 
 					</div>
-					
+
 					<div class="col-sm-6 col-lg-4 p-b-20">
 						<div class="size-h-3 flex-s-c">
 							<h5 class="f1-m-7 cl0">
@@ -225,7 +240,7 @@
 											{{ post.title }}
 										</a>
 									</h6>
-									
+
 									<span class="f1-s-3 cl6">
 										{{ post.published_at|date:"M d" }}
 									</span>
@@ -251,7 +266,7 @@
 								</a>
 							</li>
 							{% endfor %}
-							
+
 						</ul>
 					</div>
 				</div>
@@ -278,14 +293,14 @@
 		<div class="bg11">
 			<div class="container size-h-4 flex-c-c p-tb-15">
 				<span class="f1-s-1 cl0 txt-center">
-					
+
 					<a href="#"
 						class="f1-s-1 cl10 hov-link1">
 						Copyright &copy;
 						<script>document.write(new Date().getFullYear());</script> Suddidot. All rights reserved | This template
 						is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
 							target="_blank">Colorlib. <p>Developed by <a href="https://www.linkedin.com/in/brian-mendonca" target="_blank">Abdiel Brian Mendonca</a>
-							</p></a> 
+							</p></a>
 				</span>
 			</div>
 		</div>

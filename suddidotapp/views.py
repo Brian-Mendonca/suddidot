@@ -151,8 +151,15 @@ def news_detail(request, slug):
         response.set_cookie('comment_email', email, max_age=2592000)
         return response
 
+    if news.image:
+        image_url = request.build_absolute_uri(news.image.url)
+    else:
+        # image_url = request.build_absolute_uri(settings.STATIC_URL + "default-news.jpg")  # Fallback image
+        pass
+
     context = {
         'news': news,
+        "image_url": image_url,
         'readnext_news': readnext_news[:5],
         'popular_news': popular_news,
         'categories': random_categories,
