@@ -1,0 +1,75 @@
+<div>
+    <div class="how2 how2-cl4 flex-s-c">
+        <h3 class="f1-m-2 cl3 tab01-title">
+            <strong>ಮುಂದೆ ಓದಿ</strong>
+        </h3>
+    </div>
+
+    <ul class="p-t-35">
+        {% for news in readnext_news %} 
+        <div class="flex-wr-sb-s m-b-30">
+            <a href="{% url 'news_detail' news.slug %}" class="size-w-1 wrap-pic-w hov1 trans-03">
+               {% if news.image %}
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" style="max-width: auto; max-height: 70px; object-fit: cover;">
+                {% endif %}
+            </a>
+
+            <div class="size-w-2 p-b-4">
+                <h5 class="p-b-5">
+                    <a href="{% url 'news_detail' news.slug %}" class="f1-s-5 cl3 hov-cl10 trans-03">
+                        {{ news.title|truncatewords:6 }}
+                    </a>
+                </h5>
+
+                <span class="cl8">
+                    <span class="f1-s-3 m-rl-3">
+                        -
+                    </span>
+
+                    <span class="f1-s-3">
+                        {{ news.published_at|date:"M d" }}
+                    </span>
+                </span>
+            </div>
+{% endfor %}
+</ul>
+</div>
+
+<!-- <div>
+    <div class="how2 how2-cl4 flex-s-c">
+      <h3 class="f1-m-2 cl3 tab01-title">
+        <strong>ಇತ್ತೀಚಿನ ಸುದ್ದಿಗಳು</strong>
+      </h3>
+    </div>
+  
+    {% comment %} Start a row every 2 items {% endcomment %}
+    <div class="row">
+    {% for news in new_news %}
+      <div class="col-sm-6 d-flex justify-content-center">
+        <div class="flex-wr-sb-s m-b-30">
+          <a href="{% url 'news_detail' news.slug %}" class="size-w-1 wrap-pic-w hov1 trans-03">
+            {% if news.image %}
+              <img src="{{ news.image.url }}" alt="{{ news.title }}" class="img-fluid" style="height: 60px; width: auto; object-fit: contain;">
+            {% endif %}
+          </a>
+          <h6 class="p-b-1">
+            <a href="{% url 'news_detail' news.slug %}" class="f1-s-5 cl3 hov-cl10 trans-03">
+              {{ news.title }}
+            </a>
+          </h6>
+          <span class="cl8">
+            <span class="f1-s-3 m-rl-3">-</span>
+            <span class="f1-s-3">{{ news.published_at|date:"M d" }}</span>
+          </span>
+        </div>
+      </div>
+  
+      {% comment %} Close row every 2 items {% endcomment %}
+      {% if forloop.counter|divisibleby:"2" and not forloop.last %}
+        </div>
+        <div class="row">
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div> -->
+  
